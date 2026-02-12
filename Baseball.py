@@ -27,3 +27,25 @@ plt.ylabel('Total Home Runs')
 
 plt.grid(True)
 plt.show()
+# Rockies vs the League
+
+team_hr_per_year = (
+  batting
+  .groupby(['yearID', 'teamID'])['HR']
+  .sum()
+  .reset_index()
+)
+
+rockies_hr = (
+  team_hr_per_year
+  [team_hr_per_year['teamID'] == 'COL']
+  .set_index('yearID')['HR']
+)
+
+league_avg_hr = (
+  team_hr_per_year
+  .groupby('yearID')['HR']
+  .mean()
+)
+
+league_avg_hr = league_avg_hr[league_avg_hr.index >= 1993]
