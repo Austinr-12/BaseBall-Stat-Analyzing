@@ -49,3 +49,14 @@ league_avg_hr = (
 )
 
 league_avg_hr = league_avg_hr[league_avg_hr.index >= 1993]
+
+plt.figure(figsize=(10, 6))
+
+# starting to plot league average
+plt.plot(league_avg_hr.index,
+  league_avg_hr.values,
+  label='League Average',
+  color='orange',
+  linestyle='--'
+)
+
