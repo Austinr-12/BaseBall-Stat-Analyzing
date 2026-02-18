@@ -67,3 +67,12 @@ plt.plot(
   label = 'Colorado Rockies',
   color = '#33006F'
 )
+
+#comparing the league average and Rockies and nameing graph
+plt.title('Colorado Rockies Home Runs vs. League Average')
+plt.xlabel('Year')
+plt.ylable('Home Runs')
+plt.legend()
+
+plt.grid(True)
+plt.show
