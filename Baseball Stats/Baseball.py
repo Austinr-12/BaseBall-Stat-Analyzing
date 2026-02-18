@@ -60,3 +60,10 @@ plt.plot(league_avg_hr.index,
   linestyle='--'
 )
 
+#Plotting Rockies
+plt.plot(
+  rockies_hr.index,
+  rockies_hr.values
+  label = 'Colorado Rockies',
+  color = '#33006F'
+)
