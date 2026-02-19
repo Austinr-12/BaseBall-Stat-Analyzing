@@ -76,3 +76,13 @@ plt.legend()
 
 plt.grid(True)
 plt.show
+
+
+#calculating OBP 
+batting[['BB', 'HBP', 'Sf']] = batting[['BB', 'HBP', 'SF']].fillna(0)
+
+#making OBP column
+batting['OBP'] = (
+  (batting['H'] + batting['BB'] + batting['HBP']) /
+  (batting['AB'] + batting['BB'] + batting['HBP'] + batting['SF'])
+)
