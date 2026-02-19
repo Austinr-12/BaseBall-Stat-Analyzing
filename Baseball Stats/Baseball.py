@@ -86,3 +86,6 @@ batting['OBP'] = (
   (batting['H'] + batting['BB'] + batting['HBP']) /
   (batting['AB'] + batting['BB'] + batting['HBP'] + batting['SF'])
 )
+
+#No plate appearances then fill 0
+batting['OBP'] = batting['OBP'].fillna(0)
