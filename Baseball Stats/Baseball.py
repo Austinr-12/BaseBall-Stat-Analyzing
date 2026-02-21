@@ -100,3 +100,9 @@ batting_with_salary = batting.merge(
 )
 
 batting_with_salary.head()
+
+value_df = batting_with_salary[
+  (batting_with_salary['salary'] > 0) &
+  (batting_with_salary['OBP'] > 0) &
+  (batting_with_salary['AB'] >= 200)
+].copy()
