@@ -89,3 +89,14 @@ batting['OBP'] = (
 
 #No plate appearances then fill 0
 batting['OBP'] = batting['OBP'].fillna(0)
+
+#loading and getting salary data
+salaries = pd.read_csv('Salaries.csv')
+
+batting_with_salary = batting.merge(
+  salaries
+  on = ['playerID', 'hearID', 'teamID']
+  how = 'left'
+)
+
+batting_with_salary.head()
