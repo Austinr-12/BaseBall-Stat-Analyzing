@@ -101,8 +101,12 @@ batting_with_salary = batting.merge(
 
 batting_with_salary.head()
 
+#Eliminate players that we are not interested in
 value_df = batting_with_salary[
   (batting_with_salary['salary'] > 0) &
   (batting_with_salary['OBP'] > 0) &
   (batting_with_salary['AB'] >= 200)
 ].copy()
+
+#calculate OBP per dollar 
+value_DF['OBP_per_dollar'] = value_df['OBP]'] / value_df['salary']
