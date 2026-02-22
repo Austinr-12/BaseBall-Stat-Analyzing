@@ -110,3 +110,10 @@ value_df = batting_with_salary[
 
 #calculate OBP per dollar 
 value_DF['OBP_per_dollar'] = value_df['OBP]'] / value_df['salary']
+
+
+#function to offically sort this data 
+value_df_sorted = value_df.sort_values(
+  by = 'OBP_per dollar',
+  ascending = False
+)
