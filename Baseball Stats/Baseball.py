@@ -117,3 +117,12 @@ value_df_sorted = value_df.sort_values(
   by = 'OBP_per dollar',
   ascending = False
 )
+
+value_df_sorted[[
+  'playerID',
+  'yearID',
+  'teamID',
+  'OBP',
+  'salary'
+  'OBP_per_dollar'
+]].head()
