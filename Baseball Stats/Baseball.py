@@ -126,3 +126,13 @@ value_df_sorted[[
   'salary'
   'OBP_per_dollar'
 ]].head()
+
+# players from a single year 
+value_df_sorted[value_df_sorted['yearID'] == 2010][[
+  'playerID',
+  'yearID',
+  'teamID', 'AB',
+  'OBP',
+  'salary'
+  'OBP_per_dollar'
+]].head()
