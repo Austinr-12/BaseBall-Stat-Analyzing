@@ -30,3 +30,10 @@ def get_product_details(product_url: str) -> dict:
     except Exception as e:
         print('Could not fetch with product details')
         print(f'Failed with exception: {e}')
+
+
+#setup call to function so program will properly run 
+product_url = input('Enter product url: ')
+product_details = get_product_details(product_url)
+
+print(product_details)
