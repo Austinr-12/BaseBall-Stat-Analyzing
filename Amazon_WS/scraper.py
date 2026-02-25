@@ -19,3 +19,8 @@ def get_product_details(product_url: str) -> dict:
     #splitting extracted price to get the correct price
     extracted_price = soup.find('span', attrs = {'class': ' aprice'}).get_text().strip()
     price = '$' + extracted_price.split('$')[1]
+
+
+    #storing product details into dicitonary
+    product_details['title'] = title
+    product_details['price'] = price
