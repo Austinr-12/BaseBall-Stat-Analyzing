@@ -24,3 +24,9 @@ def get_product_details(product_url: str) -> dict:
     #storing product details into dicitonary
     product_details['title'] = title
     product_details['price'] = price
+    product_details['producturl'] = product_url
+
+    return product_details
+    except Exception as e:
+        print('Could not fetch with product details')
+        print(f'Failed with exception: {e}')
