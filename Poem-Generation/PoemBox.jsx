@@ -14,3 +14,14 @@ const fetchPoem = async () => {
     setError(err.message);
   }
 };
+
+useEffect(() => {
+  // Fetch a poem on initial render
+  fetchPoem();
+
+  // Fetch a new poem every 30 seconds
+  const poemIntervalId = setInterval(fetchPoem, 30000);
+  return () => {
+    clearInterval(poemIntervalId); // Cleanup poem interval on component unmount
+  };
+}, []);
