@@ -21,15 +21,17 @@ export default function PoemBox() {
     }
   };
 
-useEffect(() => {
-  // Fetch a poem on initial render
-  fetchPoem();
+seEffect(() => {
+    fetchPoem(); // Fetch a poem on initial render
 
-  // Fetch a new poem every 30 seconds
-  const poemIntervalId = setInterval(fetchPoem, 30000);
-  return () => {
-    clearInterval(poemIntervalId); // Cleanup poem interval on component unmount
-  };
-}, []);
+    const poemIntervalId = setInterval(fetchPoem, 30000); // Fetch a new poem every 30 seconds
+    const clockIntervalId = setInterval(() => setCurrentTime(new Date()), 1000); // Update clock every second
+
+    return () => {
+      clearInterval(poemIntervalId); // Cleanup poem interval on component unmount
+      clearInterval(clockIntervalId); // Cleanup clock interval on component unmount
+    };
+  }, []);
+
 
 return <div>{error ? <p>{error}</p> : <p>{response}</p>}</div>;
