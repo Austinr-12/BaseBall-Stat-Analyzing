@@ -25,3 +25,5 @@ useEffect(() => {
     clearInterval(poemIntervalId); // Cleanup poem interval on component unmount
   };
 }, []);
+
+return <div>{error ? <p>{error}</p> : <p>{response}</p>}</div>;
